@@ -1,9 +1,22 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro'
+import Hamburger from '../components/Hamburger.astro';
+import Footer from '../components/Footer.astro';
+---
 <body>
-    <a href="/">Inicio</a>
-    <a href="/about/">Sobre mi</a>
-    <a href="/blog/">Blog</a>
+    <Hamburger />
+    <Header />
   
     <h1>JosemiGT-blog</h1>
-    <h2>Holi Encarni!</h2>
-    <p>Aquí es donde publicaré sobre mi viaje de aprendizaje Astro.</p>
+    <p>Puedes encontrar mis publicaciones a continuación:</p>
+
+    <ul>
+        <li><a href="/posts/post-1/">Publicación 1</a></li>
+    </ul>
+
+    <Footer />
+    <script>
+        import "../scripts/menu.js";
+    </script>
   </body>
