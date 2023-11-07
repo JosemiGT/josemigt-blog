@@ -1,9 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const pageTitle = 'Página de inicio';
+import Greeting from '../components/Greeting.jsx';
+const pageTitle = 'JosemiGT-web';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<h2>Mi impresionante subtítulo del blog</h2>
+	<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+	<p>Bienvenidos a este modesto sitio. Donde hablaré principalmente de tecnología.</p>
+
+	<p>Este sitio web ha sido construido con Astro, puedes consultar su código fuente <a target="_blank" href="https://github.com/JosemiGT/josemigt-blog">aquí</a>.</p>
 </BaseLayout>
