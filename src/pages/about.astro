@@ -2,6 +2,7 @@
 import Footer from '../components/Footer.astro';
 import Hamburger from '../components/Hamburger.astro';
 import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.css';
 
 const pageTitle = "Sobre mi";
@@ -17,32 +18,8 @@ const skills = ["C#", "Dynamics 365 Develop", "HTML", "CSS", "JavaScript", "Reac
 const skillColor = "navy";
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-		<style define:vars={{skillColor}}>
-			h1 {
-			  color: purple;
-			  font-size: 4rem;
-			}
-			.skill {
-				color: var(--skillColor);
-				font-weight: bold;
-			}
-		  </style>
-	</head>
-	<body>
-
-		<Hamburger />
-        <Header />
-
-        <h1>{pageTitle}</h1>
-      
-        <p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda página de mi sitio web, ¡y es la primera que he construido yo mismo!</p>
+<BaseLayout pageTitle={pageTitle}>
+    <p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda página de mi sitio web, ¡y es la primera que he construido yo mismo!</p>
       
         <p>Este sitio se irá actualizando a medida que vaya completando más partes del tutorial, ¡así que no dejes de visitarlo para ver cómo va mi viaje!</p>
       
@@ -61,10 +38,4 @@ const skillColor = "navy";
 		<ul>
 			{skills.map((skill) => <li class="skill">{skill}</li>)}
 		</ul>
-		
-		<Footer />
-		<script>
-			import "../scripts/menu.js";
-		</script>
-	</body>
-</html>
+</BaseLayout>
