@@ -1,5 +1,6 @@
 ---
 import Social from "./Social.astro";
+const today = new Date();
 ---
 
 <style>
@@ -11,6 +12,15 @@ import Social from "./Social.astro";
 </style>
 
 <footer>
+  &copy; {today.getFullYear()} JosemiGT. Todos los derechos reservados.
   <Social platform="github" username="JosemiGT" />
   <Social platform="twitter" username="JosemiGT" />
 </footer>
+<style>
+  footer {
+		padding: 2em 1em 6em 1em;
+		/* background: linear-gradient(var(--gray-gradient)) no-repeat;
+		color: rgb(var(--gray)); */
+		text-align: center;
+	}
+</style>
