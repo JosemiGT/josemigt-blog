@@ -23,6 +23,7 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { tag } = Astro.params as Params;
 const { posts } = Astro.props as Props;
 ---
+
 <BaseLayout pageTitle={tag}>
   <p>Entradas etiquetadas con {tag}</p>
   <ul>
