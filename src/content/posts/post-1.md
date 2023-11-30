@@ -6,10 +6,10 @@ author: JosemiGT
 image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'El logotipo completo de Astro.'
-tags: ["astro", "bloguear", "aprender en público"]
+tags: ["astro", "frontend", "JavaScript"]
 ---
 
-¡Bienvenido a mi _nuevo blog_ sobre el aprendizaje de Astro! Aquí, voy a compartir mi viaje de aprendizaje a medida que construyo un nuevo sitio web.
+¡Bienvenido a mi _blog_. En este primer post voy a narrar los diferentes puntos que he ido desarrollando y aprendiendo para elaborar este blog.
 
 ## Lo que he conseguido
 

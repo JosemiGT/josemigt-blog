@@ -1,12 +1,13 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Greeting from '../components/Greeting.jsx';
-const pageTitle = 'JosemiGT-web';
+import BlogPost from "../components/BlogPost.astro";
+const pageTitle = 'JosemiGT-blog';
+const allPosts = await getCollection("posts");
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
-	<p>Bienvenidos a este modesto sitio. Donde hablaré principalmente de tecnología.</p>
-
-	<p>Este sitio web ha sido construido con Astro, puedes consultar su código fuente <a target="_blank" href="https://github.com/JosemiGT/josemigt-blog">aquí</a>.</p>
+	<p>Bienvenidos a este modesto sitio. Donde hablo de tecnología y mis aprendizajes.</p>
+	<br/>
+	{allPosts.map((post) => <BlogPost url={`/posts/${post.slug}`} title={post.data.title} description={post.data.description} />)}
 </BaseLayout>

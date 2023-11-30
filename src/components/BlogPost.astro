@@ -1,5 +1,44 @@
 ---
-const { url, title } = Astro.props;
+const { url, title, description } = Astro.props;
 ---
 
-<li><a href={url}>{title}</a></li>
+<a href={url}>
+    <article>
+        <h3>{title}</h3>
+        <p>{description}</p>
+    </article>
+</a>
+
+<style>
+    a{
+        color: inherit;
+        text-decoration: none;
+    }
+    article {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+      border: 1cm;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 1rem;
+      border-color: inherit;
+      width: 100%;
+      text-align: center;
+    }
+
+    article div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    article h3 {
+        width: 100%;
+    }
+
+    article p {
+        width: 100%;
+    }
+
+  </style>

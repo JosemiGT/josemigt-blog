@@ -6,20 +6,27 @@ const {title, description, author, image, pubDate, tags} = Astro.props;
 ---
 
 <BaseLayout pageTitle={title}>
-  <p>{pubDate.toLocaleString("es-ES").substring(0,10)}</p>
-  <p><em>{description}</em></p>
-  <p>Escrito por: {author}</p>
-  <img src={image?.url} width="300" alt={image?.alt} />
-  <div class="tags">
-      {tags?.map((tag) => (
-        <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-      ))}
-    </div>
-
+  <header class="postHeader">
+    <p>{pubDate.toLocaleString("es-ES").split(',')[0]}</p>
+    <img src={image?.url} width="300" alt={image?.alt} />
+    <p><em>{description}</em></p>
+    <p>Escrito por: {author}</p>
+    <div class="tags">
+        {tags?.map((tag) => (
+          <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+        ))}
+      </div>
+  </header>
+  <br />
   <slot />
 </BaseLayout>
 
 <style>
+  .postHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   a {
     color: #00539F;
   }
