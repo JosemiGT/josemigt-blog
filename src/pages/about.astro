@@ -1,7 +1,4 @@
 ---
-import Footer from '../components/Footer.astro';
-import Hamburger from '../components/Hamburger.astro';
-import Header from '../components/Header.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.css';
 
@@ -15,29 +12,36 @@ const identity = {
 };
 
 const skills = ["C#", "Dynamics 365 Develop", "HTML", "CSS", "JavaScript", "React", "Astro", "Redacción de documentos"];
-const skillColor = "navy";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda página de mi sitio web, ¡y es la primera que he construido yo mismo!</p>
+    <p>
+		Soy Josemi, me dedico a programar desde hace más de 5 años. 
+	</p>
       
-        <p>Este sitio se irá actualizando a medida que vaya completando más partes del tutorial, ¡así que no dejes de visitarlo para ver cómo va mi viaje!</p>
+	<p>
+		Este sitio se irá actualizando a medida que vaya completando más partes del tutorial, ¡así que no dejes de visitarlo para ver cómo va mi viaje!
+	</p>
       
-		<p>He aquí algunos datos sobre mí:</p>
+	<p>
+		He aquí algunos datos sobre mí:
+	</p>
 
-		<ul>
-			<li> Me llamo {identity.firstName}.</li>
-			<li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
-			{identity.hobbies.length >= 2 &&
-				<li>Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
-			}
-		</ul>
+	<ul>
+		<li> Me llamo {identity.firstName}.</li>
+		<li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
+		{identity.hobbies.length >= 2 &&
+			<li>Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
+		}
+	</ul>
 
-		<p>Mis habilidades son:</p>
+	<p>Algunas tecnologías con las que he trabajado son:</p>
 
-		<ul>
-			{skills.map((skill) => <li class="skill">{skill}</li>)}
-		</ul>
+	<ul>
+		{skills.map((skill) => <li class="skill">{skill}</li>)}
+	</ul>
 
-		<p>Este sitio web ha sido construido con Astro, puedes consultar su código fuente <a target="_blank" href="https://github.com/JosemiGT/josemigt-blog">aquí</a>.</p>
+	<p>
+		Este sitio web ha sido construido con Astro, puedes consultar su código fuente <a target="_blank" href="https://github.com/JosemiGT/josemigt-blog">aquí</a>.
+	</p>
 </BaseLayout>

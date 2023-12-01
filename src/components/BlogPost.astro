@@ -1,10 +1,12 @@
 ---
-const { url, title, description } = Astro.props;
+import FormattedDate from "./FormattedDate.astro";
+const { url, title, pubDate, description } = Astro.props;
 ---
 
 <a href={url}>
     <article>
-        <h3>{title}</h3>
+        <h2>{title}</h2>    
+        <FormattedDate date={pubDate} />
         <p>{description}</p>
     </article>
 </a>
@@ -25,20 +27,6 @@ const { url, title, description } = Astro.props;
       border-color: inherit;
       width: 100%;
       text-align: center;
-    }
-
-    article div {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    article h3 {
-        width: 100%;
-    }
-
-    article p {
-        width: 100%;
     }
 
   </style>

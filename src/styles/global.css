@@ -2,15 +2,15 @@
 html {
   background-color: 229, 233, 240;
   font-family: sans-serif;
+  --main-bg-color: white;
+  --main-text-color: #33332d;
 }
 
 html.dark {
-  background-color:#0f0f0f;
+  background-color:#33332d;
   color: #fff;
-}
-
-.dark .nav-links a {
-  color: #fff;
+  --main-bg-color: #33332d;
+  --main-text-color: white;
 }
 
 body {
@@ -32,6 +32,7 @@ h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
   text-align: center;
+  color: var(--main-text-color);
 }
 
 main {
@@ -44,15 +45,6 @@ footer {
 }
 
 /* estilos de la barra de navegación*/
-header {
-  display: flex;
-  justify-content: center;
-}
-
-header nav {
-  display: flex;
-  justify-content: center;
-}
 
 .hamburger {
   padding-right: 20px;
@@ -64,14 +56,13 @@ header nav {
   width: 40px;
   height: 5px;
   margin-bottom: 10px;
-  background-color: #95b8d1;
+  background-color: var(--main-text-color);
 }
 
 .nav-links {
   width: 100%;
   top: 5rem;
   left: 48px;
-  background-color: #95b8d1;
   display: none;
   margin: 0;
 }
@@ -84,11 +75,13 @@ header nav {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
+  color: var(--main-text-color);
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-  background-color: #95b8d1;
+  background-color: var(--main-text-color);
+  color: var(--main-bg-color);
 }
 
 .expanded {

@@ -1,7 +1,10 @@
 ---
 import Navigation from './Navigation.astro'
 import Hamburger from './Hamburger.astro';
-import ThemeIcon from '../icons/ThemeIcon.astro'
+import ThemeIcon from '../icons/ThemeIcon.astro';
+import GitHubIcon from '../icons/GitHubIcon.astro';
+import XsocialMediaIcon from '../icons/XsocialMediaIcon.astro';
+const userName = "JosemiGT";
 ---
 
 <header>
@@ -11,3 +14,17 @@ import ThemeIcon from '../icons/ThemeIcon.astro'
         <ThemeIcon />
     </nav>
 </header>
+
+<style>
+    header {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    header nav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+</style>
