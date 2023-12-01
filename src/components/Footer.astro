@@ -1,6 +1,9 @@
 ---
+import GitHubIcon from "../icons/GitHubIcon.astro";
+import XsocialMediaIcon from "../icons/XsocialMediaIcon.astro";
 import Social from "./Social.astro";
 const today = new Date();
+const userName = "JosemiGT";
 ---
 
 <style>
@@ -8,11 +11,12 @@ const today = new Date();
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
+    justify-content: center;
   }
 </style>
 
 <footer>
-  &copy; {today.getFullYear()} JosemiGT. Todos los derechos reservados.
-  <Social platform="github" username="JosemiGT" />
-  <Social platform="twitter" username="JosemiGT" />
+  &copy; {today.getFullYear()} {" " + userName}.
+  <GitHubIcon username={userName} />
+  <XsocialMediaIcon username={userName} />
 </footer>
