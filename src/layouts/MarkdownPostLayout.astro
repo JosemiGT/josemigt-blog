@@ -28,7 +28,9 @@ const {title, description, author, image, pubDate, tags} = Astro.props;
     align-items: center;
   }
   a {
-    color: #00539F;
+      color: var(--main-bg-color);
+      text-decoration: none;
+      font-weight: bold;
   }
 
   .tags {
@@ -37,11 +39,11 @@ const {title, description, author, image, pubDate, tags} = Astro.props;
   }
 
   .tag {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: .5em;
-    padding: .5em 1em;
-    font-size: 1.15em;
-    background-color: #F8FCFD;
+      margin: 0.25em;
+      border: dotted 1px #a1a1a1;
+      border-radius: .5em;
+      padding: .5em 1em;
+      font-size: 1.15em;
+      background-color: var(--main-text-color);
   }
 </style>
