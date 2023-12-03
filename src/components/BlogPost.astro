@@ -1,24 +1,39 @@
 ---
 import FormattedDate from "./FormattedDate.astro";
-const { url, title, pubDate, description } = Astro.props;
+import type { CollectionEntry } from 'astro:content';
+import Tag from "./Tag.astro";
+interface Props {
+	postData: CollectionEntry<'posts'>['data'];
+    url: string;
+}
+
+const { postData, url } = Astro.props;
 ---
 
 <a href={url}>
     <article>
-        <h2>{title}</h2>    
-        <FormattedDate date={pubDate} />
-        <p>{description}</p>
+        <div class="date">
+            <FormattedDate date={postData?.pubDate} />
+        </div>
+        <div class="postInformation">
+            <h2>{postData?.title}</h2>  
+            <p>{postData?.description}</p>
+            <p>[...] Click para seguir leyendo</p>
+        </div>
     </article>
 </a>
 
 <style>
+
+
     a{
         color: inherit;
         text-decoration: none;
     }
+
     article {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       margin-top: 1rem;
       border: 1cm;
       border-style: solid;
@@ -26,7 +41,19 @@ const { url, title, pubDate, description } = Astro.props;
       border-radius: 1rem;
       border-color: inherit;
       width: 100%;
-      text-align: center;
+      padding-top: 2%;
+    }
+
+    .date {
+        display: flex;
+        justify-content: center;
+        padding: 5%;
+    }
+    .postInformation {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
     }
 
   </style>

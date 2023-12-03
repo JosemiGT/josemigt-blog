@@ -7,12 +7,12 @@ const allPosts = await getCollection("posts");
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<p>Bienvenidos a este modesto sitio. Donde hablo de tecnología y mis aprendizajes.</p>
+	<p>Reflexiones de JosemiGT. Principalmente hablo de tecnología y mis aprendizajes.</p>
+	<hr>
+	<h2>Entradas recientes:</h2>
 	<br/>
 	{allPosts.reverse().map((post) => 
 		<BlogPost 
 			url={`/posts/${post.slug}`} 
-			title={post.data.title} 
-			pubDate={post.data.pubDate} 
-			description={post.data.description} />)}
+			postData={post.data} />)}
 </BaseLayout>
