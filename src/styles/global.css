@@ -44,6 +44,11 @@ footer {
   width: 100%;
 }
 
+a {
+  color: var(--main-text-color);
+  font-weight: bold;
+}
+
 /* estilos de la barra de navegación*/
 
 .hamburger {

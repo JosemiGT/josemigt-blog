@@ -1,5 +1,6 @@
 ---
 import GitHubIcon from "../icons/GitHubIcon.astro";
+import LinkedinIcon from "../icons/LinkedinIcon.astro";
 import XsocialMediaIcon from "../icons/XsocialMediaIcon.astro";
 const today = new Date();
 const userName = "JosemiGT";
@@ -11,6 +12,7 @@ const userName = "JosemiGT";
     gap: 1rem;
     margin-top: 2rem;
     justify-content: center;
+    align-items: center;
   }
 </style>
 
@@ -18,4 +20,5 @@ const userName = "JosemiGT";
   &copy; {today.getFullYear()} {" " + userName}.
   <GitHubIcon username={userName} />
   <XsocialMediaIcon username={userName} />
+  <LinkedinIcon username={userName} />
 </footer>

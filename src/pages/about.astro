@@ -1,4 +1,7 @@
 ---
+import GitHubIcon from '../icons/GitHubIcon.astro';
+import LinkedinIcon from '../icons/LinkedinIcon.astro';
+import XsocialMediaIcon from '../icons/XsocialMediaIcon.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.css';
 
@@ -6,32 +9,40 @@ const pageTitle = "Sobre mi";
 
 const identity = {
   firstName: "Josemi",
+  userName: "JosemiGT",
   country: "España",
-  occupation: "Desarrollador",
-  hobbies: ["deporte", "leer", "programar"],
+  occupation: "Programador y desarrollador de soluciones MS Dynamics 365",
+  hobbies: ["deporte", 
+  			"leer", 
+			"programar"],
 };
 
-const skills = ["C#", "Dynamics 365 Develop", "HTML", "CSS", "JavaScript", "React", "Astro", "Redacción de documentos"];
+const skills = ["C#", 
+				"MS Dynamics 365", 
+				"JavaScript", 
+				"HTML", 
+				"CSS", 
+				"NodeJS", 
+				"React", 
+				"SQL-T",
+				"Astro"];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
     <p>
-		Soy Josemi, me dedico a programar desde hace más de 5 años. 
+		Soy Josemi, me dedico a programar desde hace más de 5 años, especialmente en soluciones de MS Dynamics 365 y en el entorno .Net de Microsoft. 
+		Antes de ello, estudié ingeniería de organización industrial, por lo que me gusta la tecnología desde diferentes aspectos.
 	</p>
       
 	<p>
-		Este sitio se irá actualizando a medida que vaya completando más partes del tutorial, ¡así que no dejes de visitarlo para ver cómo va mi viaje!
-	</p>
-      
-	<p>
-		He aquí algunos datos sobre mí:
+		Algunos datos sobre mí:
 	</p>
 
 	<ul>
-		<li> Me llamo {identity.firstName}.</li>
-		<li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
-		{identity.hobbies.length >= 2 &&
-			<li>Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
+		<li> Vivo en {identity.country}.</li>
+		<li> Trabajo como {identity.occupation}.</li>
+		{identity.hobbies.length > 0 &&
+			<li> Algunas de mis aficiones son: {identity.hobbies.join(", ")} ...</li>
 		}
 	</ul>
 
@@ -41,7 +52,23 @@ const skills = ["C#", "Dynamics 365 Develop", "HTML", "CSS", "JavaScript", "Reac
 		{skills.map((skill) => <li class="skill">{skill}</li>)}
 	</ul>
 
+	<div class="social-icons">
+		<p>Puedes encontrarme en los siguientes sitios:</p>
+		<GitHubIcon username={identity.userName} />
+		<XsocialMediaIcon username={identity.userName} />
+		<LinkedinIcon username={identity.userName} />
+	</div>
+	
 	<p>
 		Este sitio web ha sido construido con Astro, puedes consultar su código fuente <a target="_blank" href="https://github.com/JosemiGT/josemigt-blog">aquí</a>.
 	</p>
 </BaseLayout>
+
+<style>
+	.social-icons{
+		display: flex;
+		justify-content: left;
+		gap: 0.5rem;
+		align-items: center;
+	}
+</style>
