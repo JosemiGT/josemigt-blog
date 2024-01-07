@@ -7,10 +7,9 @@ const allPosts = await getCollection("posts");
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<p>Reflexiones de JosemiGT. Principalmente hablo de tecnología y mis aprendizajes.</p>
-	<hr>
+	<p>Reflexiones de JosemiGT. Principalmente hablo de tecnología y de mis aprendizajes.</p>
 	<h2>Entradas recientes:</h2>
-	<br/>
+	<br>
 	{allPosts.reverse().map((post) => 
 		<BlogPost 
 			url={`/posts/${post.slug}`} 

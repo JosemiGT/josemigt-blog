@@ -35,6 +35,10 @@ h1 {
   color: var(--main-text-color);
 }
 
+h2, h3 {
+  color: var(--main-text-color);
+}
+
 main {
   min-height: 70vh;
 }
