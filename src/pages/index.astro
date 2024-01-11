@@ -13,8 +13,15 @@ const allPosts = await getCollection("posts");
 >
 	<p>📃 Aquí las entradas recientes de mi blog:</p>
 	<br>
-	{allPosts.reverse().map((post) => 
+	{allPosts
+	.sort(
+		// Ordenación por fecha de publicación, más recientes primeros.
+		(a, b) => { return b.data.pubDate.getDate() - a.data.pubDate.getDate()})
+	.map(
+		(post) => 
 		<BlogPost 
 			url={`/posts/${post.slug}`} 
-			postData={post.data} />)}
+			postData={post.data} />
+		)
+	}
 </BaseLayout>
