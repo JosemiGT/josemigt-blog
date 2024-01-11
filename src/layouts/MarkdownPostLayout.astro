@@ -13,7 +13,9 @@ const {title, description, author, image, pubDate, tags} = Astro.props;
   >
   <header class="postHeader">
     <p>{pubDate.toLocaleString("es-ES").split(',')[0]}</p>
-    <img src={image?.url} width="300" alt={image?.alt} />
+    <div class="container">
+      <img src={image?.url} width="300" alt={image?.alt} />
+    </div>
     <p><em>{description}</em></p>
     <p>Escrito por: {author}</p>
     <div class="tags">
@@ -36,6 +38,18 @@ const {title, description, author, image, pubDate, tags} = Astro.props;
   .tags {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    border: 1cm;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 1rem;
+    border-color: #2A3B47;
+    background-color: #212E36;
   }
 
 </style>

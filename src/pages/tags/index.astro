@@ -3,16 +3,13 @@ import Tag from "../../components/Tag.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-const pageTitle = "Categorías";
-
 const allPosts = await getCollection("posts");
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 ---
 <BaseLayout 
   title="Blog de JosemiGT | Programación, dotNet, C#, JavaScript, Dynamics 365"
   pageDescription="Soy JosemiGT y me dedico a programar desde hace más de 5 años, especialmente en soluciones de MS Dynamics 365 y en el entorno .Net de Microsoft. También me gusta NodeJS y JavaScript/TypeScript. Antes de ello, estudié ingeniería de organización industrial."
-  pageTitle="Categorías"
-  pageTitle={pageTitle}>
+  pageTitle="Categorías 🏷️">
   <p>
     Navega entre las categorías de los posts disponibles.
   </p>
