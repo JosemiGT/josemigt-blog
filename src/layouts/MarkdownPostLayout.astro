@@ -6,7 +6,11 @@ type Props = CollectionEntry<'posts'>['data'];
 const {title, description, author, image, pubDate, tags} = Astro.props;
 ---
 
-<BaseLayout pageTitle={title}>
+<BaseLayout 
+  title="Blog de JosemiGT | Programación, dotNet, C#, JavaScript, Dynamics 365"
+  pageDescription={description}
+  pageTitle={title}
+  >
   <header class="postHeader">
     <p>{pubDate.toLocaleString("es-ES").split(',')[0]}</p>
     <img src={image?.url} width="300" alt={image?.alt} />

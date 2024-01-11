@@ -1,11 +1,6 @@
 ---
-import GitHubIcon from '../icons/GitHubIcon.astro';
-import LinkedinIcon from '../icons/LinkedinIcon.astro';
-import XsocialMediaIcon from '../icons/XsocialMediaIcon.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.css';
-
-const pageTitle = "Sobre mi";
 
 const identity = {
   firstName: "Josemi",
@@ -27,7 +22,11 @@ const skills = ["C#",
 				"Astro"];
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+	title="Portfolio de JosemiGT | Programación, dotNet, C#, JavaScript, Dynamics 365"
+	pageDescription="Soy JosemiGT y me dedico a programar desde hace más de 5 años, especialmente en soluciones de MS Dynamics 365 y en el entorno .Net de Microsoft. También me gusta NodeJS y JavaScript/TypeScript. Antes de ello, estudié ingeniería de organización industrial."
+	pageTitle="Hola, soy Josemi 💻"
+ >
     <p>
 		Soy Josemi, me dedico a programar desde hace más de 5 años, especialmente en soluciones de MS Dynamics 365 y en el entorno .Net de Microsoft. 
 		Antes de ello, estudié ingeniería de organización industrial, por lo que me gusta la tecnología desde diferentes aspectos.

@@ -8,10 +8,15 @@ const pageTitle = "Categorías";
 const allPosts = await getCollection("posts");
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 ---
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout 
+  title="Blog de JosemiGT | Programación, dotNet, C#, JavaScript, Dynamics 365"
+  pageDescription="Soy JosemiGT y me dedico a programar desde hace más de 5 años, especialmente en soluciones de MS Dynamics 365 y en el entorno .Net de Microsoft. También me gusta NodeJS y JavaScript/TypeScript. Antes de ello, estudié ingeniería de organización industrial."
+  pageTitle="Categorías"
+  pageTitle={pageTitle}>
   <p>
-    Navega entre los posts categorizados por los temas disponibles.
+    Navega entre las categorías de los posts disponibles.
   </p>
+  <br>
   <div class="tags">
     {tags.map((tag) => (
       <Tag tag={tag}></Tag>

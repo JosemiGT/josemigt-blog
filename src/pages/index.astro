@@ -3,18 +3,15 @@ import { getCollection } from "astro:content";
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from "../components/BlogPost.astro";
 
-const pageTitle = 'Hola, soy JosemiGT';
-const metaTitle = 'Hola, soy JosemiGT';
-const pageDescription = 'Hola, soy JosemiGT';
 const allPosts = await getCollection("posts");
 ---
 
 <BaseLayout 
-	title="Blog de JosemiGT - Desarrollador y programador"
-	pageTitle="Hola, soy Josemi"
+	title="Blog de JosemiGT | Programación, dotNet, C#, JavaScript, Dynamics 365"
 	pageDescription="Soy JosemiGT y me dedico a programar desde hace más de 5 años, especialmente en soluciones de MS Dynamics 365 y en el entorno .Net de Microsoft. También me gusta NodeJS y JavaScript/TypeScript. Antes de ello, estudié ingeniería de organización industrial."
+	pageTitle="Hola, soy Josemi 💻"
 >
-	<p>Aquí las entradas recientes de mi blog:</p>
+	<p>📃 Aquí las entradas recientes de mi blog:</p>
 	<br>
 	{allPosts.reverse().map((post) => 
 		<BlogPost 
