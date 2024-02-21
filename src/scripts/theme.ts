@@ -1,7 +1,6 @@
 function getThemePrefers () : string|null {
 
-  if (typeof localStorage !== "undefined" 
-  && localStorage.getItem("theme")) {
+  if (localStorage?.getItem("theme")) {
       return localStorage.getItem("theme");
     }
 
@@ -12,18 +11,20 @@ function getThemePrefers () : string|null {
     return "light";
 }
 
-function setThemePrefers (themePrefers:string|null) {
+function setDarkMode (document:Document) {
 
-  if(!themePrefers) {
-    return;
+  if ((localStorage?.getItem("theme") == "dark") 
+  || window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    document.documentElement.classList.add("dark");
   }
 
-  window.localStorage.setItem("theme", themePrefers);
+  document.documentElement.classList.remove("dark");
 }
 
 function handleToggleClick () {
   const element = document.documentElement;
   element.classList.toggle("dark");
+  element.classList.toggle("light");
 
   const isDark = element.classList.contains("dark");
   localStorage.setItem("theme", isDark ? "dark" : "light");
@@ -35,8 +36,10 @@ document.addEventListener("astro:page-load", () => {
 
     if (theme === "light") {
       document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
     } else {
       document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
     }
 
     if(theme) {
@@ -47,7 +50,13 @@ document.addEventListener("astro:page-load", () => {
   });
 
 document.addEventListener('astro:after-swap', () => {
-    localStorage.theme === 'dark'
-    ? document.documentElement.classList.add("dark")
-    : document.documentElement.classList.add("light");
+
+    if(localStorage.theme === 'dark'){
+      document.documentElement.classList.add("dark")
+      document.documentElement.classList.remove("light");
+    }
+    else{
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light")
+    }
   });
