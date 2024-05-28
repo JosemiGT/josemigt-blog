@@ -33,19 +33,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-
-## Backlog
-
-- [x] Footer
-    - [x] Poner abajo del todo.
-    - [x] Cambiar cuadrados de RSSS por iconos.
-
-- [x] Barra de navegación.
-- [x] Cambio de color de fondo.
-
-- [ ] Poner en página principal los posts ordenados en descendentes.
-- [ ] Nuevo componente tipo carta para visualizar el último post con fecha, título, descripción...
-- [ ] Quitar pestaña de blog.
-- [ ] Repasar contenido actual del blog.
-- [ ] Repasar diseño css.

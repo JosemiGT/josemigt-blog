@@ -7,11 +7,11 @@ const allPosts = await getCollection("posts");
 ---
 
 <BaseLayout 
-	title="Blog de JosemiGT | Programación, dotNet, C#, JavaScript, Dynamics 365"
+	title="JosemiGT | Blog, programación, dotNet, C#, JavaScript, Dynamics 365"
 	pageDescription="Soy JosemiGT y me dedico a programar desde hace más de 5 años, especialmente en soluciones de MS Dynamics 365 y en el entorno .Net de Microsoft. También me gusta NodeJS y JavaScript/TypeScript. Antes de ello, estudié ingeniería de organización industrial."
-	pageTitle="Hola, soy Josemi 💻"
+	pageTitle="Hola, soy Josemi"
 >
-	<p>📃 Aquí las entradas recientes de mi blog:</p>
+	<h3>Artículos recientes</h3>
 	<br>
 	{allPosts
 	.sort(
