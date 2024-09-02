@@ -1,6 +1,7 @@
 ---
 import GitHubIcon from "../icons/GitHubIcon.astro";
 import LinkedinIcon from "../icons/LinkedinIcon.astro";
+import MastodonIcon from "../icons/MastodonIcon.astro";
 import XsocialMediaIcon from "../icons/XsocialMediaIcon.astro";
 const userName = "JosemiGT";
 ---
@@ -8,16 +9,24 @@ const userName = "JosemiGT";
 <style>
   footer {
     display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  
+  footer div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
   }
 </style>
 
 <footer>
-  Hecho con ❤️ por JosemiGT
-  <GitHubIcon username={userName} />
-  <XsocialMediaIcon username={userName} />
-  <LinkedinIcon username={userName} />
+  <p>Hecho con ❤️ por JosemiGT</p>
+  <div>
+    <GitHubIcon username={userName}/>
+    <LinkedinIcon username={userName}/>
+    <MastodonIcon />
+  </div>
 </footer>
