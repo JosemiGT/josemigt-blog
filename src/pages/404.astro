@@ -1,0 +1,24 @@
+---
+import SadIcon from '../icons/SadIcon.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+	title="JosemiGT | Blog, programación, dotNet, C#, JavaScript, Dynamics 365"
+	pageDescription="Soy JosemiGT y me dedico a programar. Me interesa '.Net', C#, NodeJS, JavaScript/TypeScript, Linux, SQL."
+	pageTitle="Blog de JosemiGT"
+>
+
+    <h3>¡Ops! Página no encontrada.</h3>
+    <div class="IconError">
+        <SadIcon/>
+    </div>
+</BaseLayout>
+
+<style>
+    h3 { text-align: center; }
+    .IconError {
+        display: flex;
+        justify-content: center;
+    }
+</style>
