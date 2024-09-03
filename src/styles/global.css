@@ -46,8 +46,8 @@ html.light {
   --main-color       : #1083D6;
   --text-color       : #2A3B47;
   --light-text-color : #A0A7AC;
-  --border-color     : #EFF3F5;
-  --container-color  : #FFFFFF;
+  --border-color     : #d6e2f6;
+  --container-color  : #d6e2f6;
   --body-color       : #FBFBFE;
 
   background-color:var(--body-color);
