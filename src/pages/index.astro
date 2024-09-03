@@ -2,16 +2,20 @@
 import { getCollection } from "astro:content";
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from "../components/BlogPost.astro";
+import DownArrow from "../icons/DownArrow.astro";
 
 const allPosts = await getCollection("posts");
 ---
 
 <BaseLayout 
 	title="JosemiGT | Blog, programación, dotNet, C#, JavaScript, Dynamics 365"
-	pageDescription="Soy JosemiGT y me dedico a programar. Me interesa '.Net', C#, NodeJS, JavaScript/TypeScript, Linux, SQL."
+	description="Soy JosemiGT y me dedico a programar. Me interesa '.Net', C#, NodeJS, JavaScript/TypeScript, Linux, SQL."
 	pageTitle="Blog de JosemiGT"
 >
-	<h3>Artículos recientes</h3>
+	<p class="introText">Artículos recientes</p>
+	<div class="introIcon">
+		<DownArrow />
+    </div>
 	<br>
 	{allPosts
 	.sort(
@@ -25,3 +29,16 @@ const allPosts = await getCollection("posts");
 		)
 	}
 </BaseLayout>
+
+<style>
+    .introText { 
+		text-align: center; 
+		color: var(--text-color);
+		font-weight: bold;
+		font-size:larger;
+	}
+	.introIcon {
+        display: flex;
+        justify-content: center;
+    }
+</style>
