@@ -112,16 +112,20 @@ a {
 }
 
 .nav-links {
-  width: 100%;
-  top: 5rem;
-  left: 48px;
+  position: fixed;
+  top: 0px;
+  left: 80px;
+  background-color: var(--container-color);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   display: none;
-  margin: 0;
 }
 
 .nav-links a {
-  display: block;
+  display: flex;
   text-align: center;
+  justify-content: center;
   padding: 10px 0;
   text-decoration: none;
   font-size: 1.2rem;
@@ -143,8 +147,9 @@ a {
 @media screen and (min-width: 636px) {
   .nav-links {
     margin-left: 5em;
-    display: block;
+    display: flex;
     position: static;
+    box-shadow: 0 0 0 0;
     width: auto;
     background: none;
   }
