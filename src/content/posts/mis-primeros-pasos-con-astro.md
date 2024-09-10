@@ -135,7 +135,7 @@ Para añadir una página nueva a nuestro sitio web, es tan fácil como crear un 
 
 Una vez creado y definido, se generará una nueva página en _"localhost/tu-nueva-pagina"_, por supuesto, la página "index" será la que se pinta en la raíz de nuestro dominio.
 
-## Agregando integraciones y frameworks UI.
+## Agregando integraciones y frameworks UI
 
 En la documentación hay una extensa [guía de como añadir diferentes tipos de componentes en nuestro proyectos](https://docs.astro.build/en/guides/framework-components/), a día de hoy se puede usar de forma oficial los siguientes frameworks:
 
