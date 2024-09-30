@@ -1,7 +1,7 @@
 ---
 title: Primeros pasos con claves PGP
 pubDate: 2024-09-30
-description: ¿Qué es una clave GPG? ¿Para que sirve? ¿Cómo puedo utilizarla?
+description: ¿Qué es una clave PGP? ¿Para que sirve? ¿Cómo puedo utilizarla?
 author: JosemiGT
 image:
   url: /imgs/key-password.svg
@@ -10,13 +10,13 @@ tags:
   - Criptografía
 ---
 
-En este artículo voy a indagar acerca de que es, para que sirve y como se puede utilizar una clave GPG para encriptar y firmar información.
+En este artículo voy a indagar acerca de que es, para que sirve y como se puede utilizar una clave PGP para encriptar y firmar información.
 
 ## ¿Qué es  *PGP*?
 
 PGP son las siglas de "*Pretty Good Privacy*", se trata de un software de encriptación, firma y autentificación. Este software fue desarrollado, patentado y comercializado  por "Phil Zimmermann".  Posteriormente debido al éxito de este software, se usó como base para desarrollar la "OpenPGP" como estándar de internet, esta vez si como software libre y no propietario.
 
-La particularidad del software **GCP** es que se trata de un software de cifrado asimétrico. Esto quiere decir que se usa una clave para cifrar y otra clave para descifrar.
+La particularidad del software **PGP** es que se trata de un software de cifrado asimétrico. Esto quiere decir que se usa una clave para cifrar y otra clave para descifrar.
 
 Como estas claves son diferentes, puedes de forma segura compartir la clave que se encarga de encriptar a otra persona, esta es a la que llamamos **clave pública**. Luego, nos guardamos de forma privada la clave que se encarga de descifrar, esta no se comparte con nadie y por ello se llama *clave privada*. Es fundamental que nadie tenga acceso a esta clave para mantener la privacidad de nuestra información.
 
