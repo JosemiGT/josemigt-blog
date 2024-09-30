@@ -4,7 +4,7 @@ pubDate: 2024-09-10
 description: 'En esta publicación narro mis primeros pasos con Astro.'
 author: JosemiGT
 image:
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
+    url: '/imgs/astro-logo.webp'
     alt: 'El logotipo completo de Astro.'
 tags: ["Astro", "JavaScript"]
 ---
