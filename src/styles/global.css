@@ -128,7 +128,7 @@ a {
   justify-content: center;
   padding: 10px 0;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   text-transform: uppercase;
   color: var(--text-color);
@@ -138,6 +138,7 @@ a {
 .nav-links a:focus {
   background-color: var(--container-color);
   color: var(--text-color);
+  border-radius: 10px;
 }
 
 .expanded {
@@ -146,7 +147,6 @@ a {
 
 @media screen and (min-width: 636px) {
   .nav-links {
-    margin-left: 5em;
     display: flex;
     position: static;
     box-shadow: 0 0 0 0;
