@@ -1,5 +1,5 @@
 ---
-title: Primeros pasos con Vim
+title: Vim - Primeros pasos
 pubDate: 2024-10-22
 description: Mis primeros pasos usando Vim
 author: JosemiGT
