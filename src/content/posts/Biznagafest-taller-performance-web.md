@@ -4,7 +4,7 @@ pubDate: 2024-11-18
 description: Introducción a herramientas y buenas prácticas para mejorar el rendimiento de una web.
 author: JosemiGT
 image:
-  url: '/imgs/web-icon.svg'
+  url: '/imgs/performance-icon.svg'
   alt: 'Ícono de monitor de un ordenador y una flecha ascendente para indicar performance.'
 tags:  ["Frontend", "Performance"]
 ---
