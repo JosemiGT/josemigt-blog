@@ -17,7 +17,10 @@ const { postData, url } = Astro.props;
         <div class="postInformation">
             <h2>{postData?.title}</h2>  
             <p>{postData?.description}</p>
-            <p>[...] Click para seguir leyendo</p>
+            {postData?.tags.map(tag => {
+                return <span>#{tag} </span>
+            })}
+
         </div>
     </article>
 </a>
@@ -50,13 +53,19 @@ const { postData, url } = Astro.props;
     }
 
     .postInformation {
-        padding-left: 2%;
-        padding-right: 2%;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: center;
         width: 100%;
+        margin-bottom: 1rem;
+        
+    }
+    
+    .postInformation h2,p {
+        max-width: 65ch;
+    }
+
+    .postInformation span {
+        color: var(--light-text-color );
+        font-size: small;
+
     }
 
   </style>
