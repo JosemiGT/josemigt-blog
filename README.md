@@ -1,6 +1,8 @@
 # JosemiGT - Blog - Repositorio
 
-Este proyecto está siendo desarrollado utilizando "Astro".
+
+
+Este proyecto se ha desarrollado usando el "metaframework" de "Astro".
 
 ## 🚀 Project Structure
 
@@ -10,9 +12,58 @@ Inside of your Astro project, you'll see the following folders and files:
 /
 ├── public/
 ├── src/
+│   └── components/
+│       └── BlogPost.astro
+│       └── Footer.astro
+│       └── FormattedDate.astro
+│       └── Hamburger.astro
+│       └── Header.astro
+│       └── Navigation.astro
+│       └── ScrollTopButton.astro
+│       └── Social.astro
+│       └── Tag.astro
+│   └── content/
+│       └── posts/ (each article in markdown)
+│       └── config.ts
+│   └── Icons/
+│       └── DownArrow.astro
+│       └── GitHubIcon.astro
+│       └── LinkednIcon.astro
+│       └── MastodonIcon.astro
+│       └── RssIcon.astro
+│       └── SadIcon.astro
+│       └── ThemeIcon.astro
+│       └── UpArrow.astro
+│       └── XsocialMediaIcon.astro
+│   └── layouts/
+│       └── BaseLayout.astro
+│       └── MarkdownPostLayout.astro
 │   └── pages/
 │       └── index.astro
+|       └── posts/
+│           └── [...slug].astro
+|       └── tags/
+│           └── index.astro
+│           └── [tag].astro
+|       └── 404.astro
+|       └── about.astro
+|       └── blog.astro
+|       └── books.astro
+|       └── index.astro
+|       └── privacidad.astro
+|       └── rss.xml.js
+│   └── scripts/
+|       └── menu.ts
+|       └── theme.ts
+│   └── styles/
+|       └── global.css
 └── package.json
+└── env.d.ts
+└── .node-version
+└── astro.config.ms
+└── .gitignore
+└── README.md
+└── tsconfig.json
 ```
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
