@@ -70,7 +70,7 @@ body {
 }
 
 p { 
-  max-width: 75ch;
+  max-width: 80ch;
   margin-bottom: 1em; /* fallback */
   margin-bottom: 1lh;
 }
@@ -112,6 +112,13 @@ a {
   color: var(--main-color);
   text-decoration:underline;
   font-weight: bold;
+}
+
+li {
+  margin-top: 0.5em; /* fallback */
+  margin-top: 0.5lh;
+  margin-bottom: 0.5em; /* fallback */
+  margin-bottom: 0.5lh;
 }
 
 /* estilos de la barra de navegación*/
