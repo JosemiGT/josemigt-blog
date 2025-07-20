@@ -58,7 +58,7 @@ body {
   margin: 0 auto;
   width: 100%;
   max-width: 80ch;
-  padding: 1rem;
+  padding: 1lh;
   line-height: 1.5;
   min-height: 100vh;
   display: flex;
@@ -69,23 +69,33 @@ body {
   box-sizing: border-box;
 }
 
-p { max-width: 75ch }
+p { 
+  max-width: 75ch;
+  margin-bottom: 1em; /* fallback */
+  margin-bottom: 1lh;
+}
 
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
   text-align: center;
   color: var(--main-color);
+  margin-bottom: 1em; /* fallback */
+  margin-bottom: 1lh;
 }
 
 h2 {
   margin-top: 30px;
   color: var(--main-color);
+  margin-bottom: 1em; /* fallback */
+  margin-bottom: 1lh;
 }
 
 h3 {
   margin-top: 30px;
   color: var(--text-color);
+  margin-bottom: 1em; /* fallback */
+  margin-bottom: 1lh;
 }
 
 main {
@@ -105,7 +115,6 @@ a {
 }
 
 /* estilos de la barra de navegación*/
-
 .hamburger {
   padding-right: 20px;
   cursor: pointer;
