@@ -1,7 +1,5 @@
 # JosemiGT - Blog - Repositorio
 
-
-
 Este proyecto se ha desarrollado usando el "metaframework" de "Astro".
 
 ## 🚀 Project Structure
