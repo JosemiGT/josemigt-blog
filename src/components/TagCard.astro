@@ -1,0 +1,41 @@
+---
+const { tag, size = "md", color = "primary" } = Astro.props;
+---
+<a href={`/tags/${tag}`} class=`tag ${size} ${color}`>
+    {tag}
+</a>
+
+<style>
+    
+.tag {
+    display: inline-block;
+    margin: 0.25em;
+    border-radius: .5em;
+    color: var(--body-color);
+    width: fit-content;
+    font-weight: bold;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+/* Tamaños */
+.tag.sm {
+  padding: 0.25em 0.5em;
+  font-size: 0.85em;
+}
+
+.tag.md {
+  padding: 0.5em 1em;
+  font-size: 1.15em;
+}
+
+.tag.lg {
+  padding: 0.75em 1.25em;
+  font-size: 1.35em;
+}
+
+/* Paleta de colores */
+.tag.primary   { background-color: var(--main-color); } /* azul */
+.tag.secondary { background-color: #c1cfe5; } /* gris */
+
+</style>

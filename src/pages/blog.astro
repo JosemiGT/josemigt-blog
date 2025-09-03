@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from "../components/BlogPost.astro";
 import DownArrow from "../icons/DownArrow.astro";
+import BlogPostCard from "../components/BlogPostCard.astro";
 
 const allPosts = await getCollection("posts");
 ---
@@ -12,8 +13,8 @@ const allPosts = await getCollection("posts");
 	description="Soy JosemiGT y me dedico a programar. Me interesa '.Net', C#, NodeJS, JavaScript/TypeScript, Linux, SQL."
 	pageTitle="Blog de JosemiGT"
 >
-	<p class="introText">Artículos recientes</p>
 	<div class="introIcon">
+		<p class="introText">Artículos recientes</p>
 		<DownArrow />
     </div>
 	<br>
@@ -23,7 +24,7 @@ const allPosts = await getCollection("posts");
 		(a, b) => { return b.data.pubDate.getTime() - a.data.pubDate.getTime()})
 	.map(
 		(post) => 
-		<BlogPost 
+		<BlogPostCard 
 			url={`/posts/${post.slug}`} 
 			postData={post.data} />
 		)
@@ -31,14 +32,18 @@ const allPosts = await getCollection("posts");
 </BaseLayout>
 
 <style>
+	.introIcon {
+        display: flex;
+		flex-direction: column;
+        justify-content: center;
+		text-align: center;
+		align-items: center;
+		gap: 0em;
+    }
     .introText { 
-		text-align: center; 
 		color: var(--text-color);
 		font-weight: bold;
 		font-size:larger;
+		margin-bottom: 0;
 	}
-	.introIcon {
-        display: flex;
-        justify-content: center;
-    }
 </style>

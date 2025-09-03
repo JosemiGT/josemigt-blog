@@ -8,6 +8,7 @@ image:
   alt: El logotipo de GnuPG
 tags:
   - Criptografía
+state: Sprouting
 ---
 
 En este artículo voy a indagar acerca de que es, para que sirve y como se puede utilizar una clave PGP para encriptar y firmar información.

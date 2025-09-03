@@ -6,7 +6,8 @@ author: JosemiGT
 image:
     url: '/imgs/astro-logo.webp'
     alt: 'El logotipo completo de Astro.'
-tags: ["Astro", "JavaScript"]
+tags: ["Desarrollo-Software"]
+state: Sprouting
 ---
 
 Bienvenidos a mi  recién inaugurado _blog_. En este blog quiero detallar y documentar mis aprendizajes sobre tecnología y programación, así que buscando algún generador de páginas web estáticas open source, encontré uno que está ganando mucha popularidad, empapándome de la documentación en la [web de astro 🚀](https://docs.astro.build/es/getting-started/) me gustó lo que vi y lo he estado usando para crear mi propio blog.

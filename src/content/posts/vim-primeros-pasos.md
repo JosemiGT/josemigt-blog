@@ -7,6 +7,7 @@ image:
   url: '/imgs/vim-logo.webp'
   alt: 'El logotipo de Vim.'
 tags:  ["Vim"]
+state: Growing
 ---
 
 Tras un tiempo leyendo por algunos rincones de internet el argumento de que con el uso de *Vim*, *NeoVim* o editores en modo vim, suponen un  incremento de velocidad a la hora de escribir una vez superada la curva de aprendizaje inicial. Además, sintiéndome atraído por su filosofía de editor minimalista que se puede ejecutar en cualquier sistema, he decidido darle una oportunidad para usarlo y ver si consigo dominar esta herramienta.

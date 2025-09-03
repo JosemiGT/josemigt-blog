@@ -1,0 +1,77 @@
+---
+import { getCollection } from "astro:content";
+import { EmojiState, PublicState, type TagData } from '../types/garden';
+import { PostState } from '../types/garden';
+
+const posts = await getCollection("posts");
+
+const publicPosts = posts.filter(
+  post => PublicState.includes(post.data.state)
+);
+
+// Agrupamos por tag
+const tagsMap: Record<string, TagData> = {};
+
+publicPosts.forEach(post => {
+
+  const estadoNota = post.data.state || "sprouting";
+  const tags = post.data.tags || [];
+
+  tags.forEach(tag => {
+
+    if (!tagsMap[tag]) {
+      tagsMap[tag] = { posts: [], maxState: PostState.Sprouting };
+    }
+
+    tagsMap[tag].posts.push(post);
+    
+    // Calculamos estado máximo del tag
+    if (PublicState.indexOf(estadoNota) > PublicState.indexOf(tagsMap[tag].maxState)) {
+      tagsMap[tag].maxState = estadoNota;
+    }
+  });
+});
+
+const tagsOrdenadas = Object.keys(tagsMap).sort();
+---
+
+<section>
+  <h2>Índice del jardín digital</h2>
+
+  <ul>
+    {tagsOrdenadas.map((tag) => {
+      const { posts, maxState } = tagsMap[tag];
+
+      return (
+        <li class="indice">
+          <h2>
+            {EmojiState[maxState]} {tag}
+          </h2>
+          <ul>
+            {posts.map((post) => (
+              <li>
+                <a href={`/notas/${post.slug}`}>
+                  {EmojiState[post.data.state]} {post.data.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+      );
+    })}
+  </ul>
+</section>
+
+<style>
+
+  li {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+</style>

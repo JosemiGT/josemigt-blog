@@ -1,6 +1,6 @@
 ---
 import ScrollTopButton from '../components/ScrollTopButton.astro';
-import Tag from '../components/Tag.astro';
+import TagCard from '../components/TagCard.astro';
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
 type Props = CollectionEntry<'posts'>['data'];
@@ -21,7 +21,7 @@ const {title, description, author, image, pubDate, tags} = Astro.props;
     <p>Escrito por: {author}</p>
     <div class="tags">
         {tags?.map((tag) => (
-          <Tag tag={tag}/>
+          <TagCard tag={tag}/>
         ))}
       </div>
   </header>

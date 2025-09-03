@@ -1,0 +1,105 @@
+---
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "./FormattedDate.astro";
+import TagCard from "./TagCard.astro";
+interface Props {
+	postData: CollectionEntry<'posts'>['data'];
+    url: string;
+}
+
+const { postData, url } = Astro.props;
+---
+
+<article class="card-layout ">
+    <a href={url}>
+        <div class="card-header">
+            <h2>{postData?.title}</h2>  
+        </div>
+    </a>
+    <div class="card-main">
+            <FormattedDate date={postData?.pubDate} />
+            <span>|</span>
+            {postData?.tags.map(tag => {
+                return <TagCard 
+                    tag={tag} 
+                    size="sm" 
+                    color="secondary"/>
+            })}
+        </div>
+        <div class="card-footer">
+            <p>{postData?.description}</p>
+        </div>
+
+    </article>
+
+<style>
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .card-layout {
+        width: 100%;
+        display: grid;
+        grid:
+            "header" auto
+            "main" auto
+            "footer" auto
+            / auto;
+        gap: 0px;
+        background-color: var(--container-color);
+        border: 1cm;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 1rem;
+        border-color: var(--border-color);
+        margin-bottom: 1rem;
+        padding: 1em 3em 1em;
+    }
+
+    .card-header { 
+        grid-area: header; 
+    }
+
+    .card-header h2 {
+        display: inline-block;
+    }
+
+    .card-main { 
+        grid-area: main; 
+    }
+    .card-footer { 
+        grid-area: footer; 
+        margin-top: 0.5rem;
+    }
+
+    .date {
+        display: flex;
+        justify-content: center;
+        font-size: larger;
+        padding-left: 3%;
+    }
+    
+    .card-header h2 {
+        max-width: 60ch;
+        margin-bottom: 0.5em; /* fallback */
+        margin-bottom: 0.5lh;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        font-size: clamp(1.125rem, 1rem + 0.8vw, 1.5rem);
+    }
+
+    article p {
+        max-width: 60ch;
+        margin-bottom: 1em; /* fallback */
+        margin-bottom: 1lh;
+    }
+
+    .tag {
+        color: var(--light-text-color );
+        font-size: small;
+        max-width: 65ch;
+    }
+
+  </style>

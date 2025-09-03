@@ -1,5 +1,5 @@
 ---
-import Tag from "../../components/Tag.astro";
+import TagCard from "../../components/TagCard.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
@@ -16,7 +16,7 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
   <br>
   <div class="tags">
     {tags.map((tag) => (
-      <Tag tag={tag}></Tag>
+      <TagCard tag={tag} />
     ))}
   </div>
 </BaseLayout>

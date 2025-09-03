@@ -1,7 +1,8 @@
-// Importa las utilidades de `astro:content`
 import { z, defineCollection } from "astro:content";
+import { PostState } from "../types/garden";
 
-// Define un `type` y un `schema` para cada colección
+const stateValues = Object.values(PostState) as [PostState, ...PostState[]];
+
 const postsCollection = defineCollection({
     type: 'content',
     schema: z.object({
@@ -13,11 +14,11 @@ const postsCollection = defineCollection({
         url: z.string(),
         alt: z.string()
       }),
-      tags: z.array(z.string())
+      tags: z.array(z.string()),
+      state: z.enum(stateValues)
     })
 });
 
-// Exporta un solo objeto `collections` con las colecciones registradas
 export const collections = {
   posts: postsCollection,
 };
