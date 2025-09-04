@@ -1,34 +1,32 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from '../layouts/BaseLayout.astro';
-import DownArrow from "../icons/DownArrow.astro";
-import BlogPostCard from "../components/BlogPostCard.astro";
 import GardenTable from "../components/GardenTable.astro";
-
-const allPosts = await getCollection("posts");
 ---
 
 <BaseLayout 
-	title="JosemiGT | Blog, programación, dotNet, C#, JavaScript, Dynamics 365"
+	title="JosemiGT | Jardín digital | Blog, programación, dotNet, C#, JavaScript, Dynamics 365"
 	description="Soy JosemiGT y me dedico a programar. Me interesa '.Net', C#, NodeJS, JavaScript/TypeScript, Linux, SQL."
 	pageTitle="JosemiGT"
 >
-<p>
-	Este es mi jardín digital, un espacio donde cultivo ideas y aprendizajes. Sientete libre de explorar mis anotaciones.
-</p>
-<p>
-	Cada nota/post en este sitio web está viva y puede evolucionar según mis conocimientos en un tema mejoren con el tiempo. 
-	Los símbolos de plantas me ayudan a representan la fase de desarrollo de una nota, idea o tema.
-</p>
-<ul>
-	<li>🌱 <strong>Brotando</strong>: recién plantada, primer borrador compartido.</li>
-	<li>🌿 <strong>Creciendo</strong>: más desarrollada, aún en evolución.</li>
-	<li>🌸 <strong>Floreciendo</strong>: bien formada, casi completa.</li>
-	<li>🌳 <strong>Madura</strong>: consolidada, material de referencia.</li>
-</ul>
+	<h2>Sobre este sitio</h2>
+	<p>
+		Escribo sobre programación, tecnología, linux, servidores, selfhosting y en general temás técnicos.
+	</p>
+	<p>
+		Este es mi jardín digital, es decir, un blog donde cada post de este sitio está vivo y puede evolucionar con el tiempo. A diferencia de un blog clásico, donde se busca tener un post por cada tema, ordenados de forma cronológica y generalmente nunca volver a actualizar ese contenido, aquí busco cultivar las ideas y conceptos, por lo que los contenidos se irán actualizando y ampliando conforme aprenda más de un tema, tanto con posts relaciondos como ampliando el propio post. Así, quiero construir un espacio donde muestro como voy cultivando mis aprendizajes e ideas.
+	</p>
+	<p> Cada idea o concepto, es como una semilla que brota cuando le doy forma, y lentamente va creciendo, floreciendo y madurando. O marchitando si no se riega y abona.
+		En esta primera página, se puede observar los temas sobre los que estoy indagando y su grado de maduración. 
+		Los símbolos de plantas me ayudan a representar la fase de desarrollo de una nota, idea o tema.
+	</p>
+	<ul>
+		<li>🌱 <strong>Brotando</strong>: recién plantada, primer borrador compartido.</li>
+		<li>🌿 <strong>Creciendo</strong>: más desarrollada, aún en evolución.</li>
+		<li>🌸 <strong>Floreciendo</strong>: bien formada, casi completa.</li>
+		<li>🌳 <strong>Madura</strong>: consolidada, material de referencia.</li>
+	</ul>
 
-
-<GardenTable/>
+	<GardenTable/>
 
 </BaseLayout>
 
