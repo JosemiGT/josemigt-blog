@@ -7,7 +7,7 @@ image:
   url: /imgs/key-password.svg
   alt: El logotipo de GnuPG
 tags:
-  - Criptografía
+  - Herramientas de Linux
 state: Sprouting
 ---
 

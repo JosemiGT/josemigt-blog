@@ -6,7 +6,7 @@ author: JosemiGT
 image:
     url: '/imgs/astro-logo.webp'
     alt: 'El logotipo completo de Astro.'
-tags: ["Desarrollo-Software"]
+tags: ["Desarrollo de software"]
 state: Sprouting
 ---
 

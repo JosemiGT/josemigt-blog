@@ -6,7 +6,7 @@ author: JosemiGT
 image:
   url: '/imgs/ddd.webp'
   alt: 'Esquema de Disna.'
-tags:  ["Desarrollo-Software"]
+tags:  ["Desarrollo de software"]
 state: Wild
 ---
 

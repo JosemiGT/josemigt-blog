@@ -6,7 +6,7 @@ author: JosemiGT
 image:
   url: '/imgs/vim-logo.webp'
   alt: 'El logotipo de Vim.'
-tags:  ["Vim"]
+tags:  ["Herramientas de Linux"]
 state: Growing
 ---
 

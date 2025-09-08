@@ -6,7 +6,7 @@ author: JosemiGT
 image:
   url: '/imgs/performance-icon.svg'
   alt: 'Ícono de monitor de un ordenador y una flecha ascendente para indicar performance.'
-tags:  ["Desarrollo-Software"]
+tags:  ["Desarrollo de software"]
 state: Wild
 ---
 
