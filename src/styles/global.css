@@ -4,6 +4,7 @@ html {
 
   --main-color       : #1083D6;
   --text-color       : #2A3B47;
+  --acent-color      : #5ECB7B;
   --light-text-color : #A0A7AC;
   --border-color     : #EFF3F5;
   --container-color  : #FFFFFF;
@@ -17,8 +18,9 @@ html {
   html {  
     font-family: sans-serif;
 
-    --main-color       : #52A5E0;
+    --main-color       : #5EA6EE;
     --text-color       : #C8CDD0;
+    --acent-color      : #3C8C55;
     --light-text-color : #A0A7AC;
     --border-color     : #2A3B47;
     --container-color  : #212E36;

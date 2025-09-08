@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPost from '../../components/BlogPost.astro';
 import type { InferGetStaticParamsType, InferGetStaticPropsType, GetStaticPaths, MarkdownInstance } from 'astro';
 import { getCollection } from "astro:content";
+import BlogPostCard from '@/components/BlogPostCard.astro';
+import TagCard from '@/components/TagCard.astro';
 
 
 export const getStaticPaths = (async () => {
@@ -20,15 +22,22 @@ export const getStaticPaths = (async () => {
 type Params = InferGetStaticParamsType<typeof getStaticPaths>;
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
+const allPosts = await getCollection("posts");
+const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 const { tag } = Astro.params as Params;
 const { posts } = Astro.props as Props;
 ---
 
 <BaseLayout pageTitle={tag}>
+    <div class="tags">
+    {tags.filter(tagPost => tagPost != tag).map((tag) => (
+      <TagCard tag={tag} />
+    ))}
+  </div>
   <hr>
   <p>Entradas etiquetadas con {tag}</p>
   <br/>
   <ul>
-    {posts.map((post) => <BlogPost url={`/posts/${post.slug}`} postData={post.data}/>)}
+    {posts.map((post) => <BlogPostCard url={`/posts/${post.slug}`} postData={post.data}/>)}
   </ul>
 </BaseLayout>
