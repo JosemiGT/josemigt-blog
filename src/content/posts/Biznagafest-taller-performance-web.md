@@ -7,7 +7,7 @@ image:
   url: '/imgs/performance-icon.svg'
   alt: 'Ícono de monitor de un ordenador y una flecha ascendente para indicar performance.'
 tags:  ["Desarrollo-Software"]
-state: Sprouting
+state: Wild
 ---
 
 Además del taller DDD, que comenté [aquí](./biznagafest-taller-ddd-refactoring), también asistí a otro taller el pasado 26 de octubre de octubre, en la [BiznagaFest](https://www.biznagafest.com/), evento de desarrollo de software. Este otro taller fue impartido por [Joan León](https://bsky.app/profile/nucliweb.net) y se dieron algunas pinceladas sobre como podemos mejorar el rendimiento en una aplicación web.

@@ -20,15 +20,11 @@ publicPosts.forEach(post => {
   tags.forEach(tag => {
 
     if (!tagsMap[tag]) {
-      tagsMap[tag] = { posts: [], maxState: PostState.Sprouting };
+      tagsMap[tag] = { posts: [], allStates: []};
     }
 
     tagsMap[tag].posts.push(post);
-    
-    // Calculamos estado máximo del tag
-    if (PublicState.indexOf(estadoNota) > PublicState.indexOf(tagsMap[tag].maxState)) {
-      tagsMap[tag].maxState = estadoNota;
-    }
+    tagsMap[tag].allStates.push(estadoNota);
   });
 });
 
@@ -40,23 +36,23 @@ const tagsOrdenadas = Object.keys(tagsMap).sort();
 
   <ul>
     {tagsOrdenadas.map((tag) => {
-      const { posts, maxState } = tagsMap[tag];
+      const { posts, allStates } = tagsMap[tag];
 
       return (
-        <li class="indice">
-          <h2>
-            {EmojiState[maxState]} {tag}
-          </h2>
+        <details class="indice">
+          <summary>
+            {tag} {allStates.map(state => EmojiState[state])}
+          </summary>
           <ul>
             {posts.map((post) => (
               <li>
-                <a href={`/notas/${post.slug}`}>
+                <a href={`/posts/${post.slug}`}>
                   {EmojiState[post.data.state]} {post.data.title}
                 </a>
               </li>
             ))}
           </ul>
-        </li>
+        </details>
       );
     })}
   </ul>
@@ -64,7 +60,7 @@ const tagsOrdenadas = Object.keys(tagsMap).sort();
 
 <style>
 
-  li {
+  /* li {
     list-style: none;
     padding-left: 0;
   }
@@ -72,6 +68,65 @@ const tagsOrdenadas = Object.keys(tagsMap).sort();
   a {
     color: inherit;
     text-decoration: none;
-  }
+  } */
+
+details {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  background: var(--container-color);
+  transition: background 0.2s ease;
+  margin-bottom: 0.75rem;
+}
+
+/* details:hover {
+  color: var(--container-color);
+  background: var(--text-color);
+} */
+
+/* Cabecera */
+summary {
+  display: flex;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+summary::before {
+  content: "▸";
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease;
+  color: var(--light-text-color);
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+details ul {
+  margin: 0.5rem 0 0.25rem 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+details li {
+  margin: 0.25rem 0;
+}
+
+details li a {
+  text-decoration: none;
+  color: var(--light-text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+details li a:hover {
+  background: #e6f9ed; /* verde claro */
+}
+
 
 </style>

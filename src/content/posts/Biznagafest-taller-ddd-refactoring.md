@@ -7,7 +7,7 @@ image:
   url: '/imgs/ddd.webp'
   alt: 'Esquema de Disna.'
 tags:  ["Desarrollo-Software"]
-state: Sprouting
+state: Wild
 ---
 
 Ayer, 26 de octubre de  octubre, acudí al evento  [BiznagaFest](https://www.biznagafest.com/) de desarrollo de software celebrado en Málaga. En este evento tuve la suerte de acudir a un taller sobre Domain Driven Design (DDD) y refactorización del código, impartido  por [Pedro Pardal](https://www.youtube.com/@ppardalj). En este artículo intentaré sintetizar algunos de los conceptos que he aprendido durante la realización de este taller.
