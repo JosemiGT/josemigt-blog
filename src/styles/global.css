@@ -9,6 +9,7 @@ html {
   --border-color     : #EFF3F5;
   --container-color  : #FFFFFF;
   --body-color       : #FBFBFE;
+  --tag-bg-color     : #3C8C55;
 
   background-color:var(--body-color);
   color: var(--text-color);
@@ -25,7 +26,8 @@ html {
     --border-color     : #2A3B47;
     --container-color  : #212E36;
     --body-color       : #192229;
-  
+    --tag-bg-color     : #c1cfe5;
+
     background-color:var(--body-color);
     color: var(--text-color);
   }
@@ -38,6 +40,7 @@ html.dark {
   --border-color     : #2A3B47;
   --container-color  : #212E36;
   --body-color       : #192229;
+  --tag-bg-color     : #c1cfe5;
 
   background-color:var(--body-color);
   color: var(--text-color);
@@ -51,6 +54,7 @@ html.light {
   --border-color     : #d6e2f6;
   --container-color  : #d6e2f6;
   --body-color       : #FBFBFE;
+  --tag-bg-color     : #3C8C55;
 
   background-color:var(--body-color);
   color: var(--text-color);
@@ -112,8 +116,9 @@ footer {
 
 a {
   color: var(--main-color);
-  text-decoration:underline;
+  text-decoration:none;
   font-weight: bold;
+  color: var(--acent-color)
 }
 
 li {
@@ -121,6 +126,29 @@ li {
   margin-top: 0.5lh;
   margin-bottom: 0.5em; /* fallback */
   margin-bottom: 0.5lh;
+}
+
+pre {
+  padding: 8px 16px;
+  overflow: auto;
+  border-radius: 4px;
+}
+
+code {
+  padding: 4px;
+  border-radius: 4px;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  direction: ltr;
+  font-size: 14px;
+}
+
+pre > code {
+  padding: 0;
+  line-height: 1.5;
+  word-break: normal;
+  white-space: pre;
+  word-spacing: normal;
+  tab-size: 4;
 }
 
 /* estilos de la barra de navegación*/

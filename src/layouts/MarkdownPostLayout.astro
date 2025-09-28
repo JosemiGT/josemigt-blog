@@ -14,14 +14,16 @@ const {title, description, author, image, pubDate, tags} = Astro.props;
   >
   <header class="postHeader">
     <p>{pubDate.toLocaleString("es-ES").split(',')[0]}</p>
-    <div class="container">
-      <img src={image?.url} width="300" alt={image?.alt} />
-    </div>
+    {image && image?.url &&
+      <div class="container">
+        <img src={image?.url} width="300" alt={image?.alt} />
+      </div>
+    }
     <p><em>{description}</em></p>
     <p>Escrito por: {author}</p>
     <div class="tags">
         {tags?.map((tag) => (
-          <TagCard tag={tag}/>
+          <TagCard tag={tag} color="secondary"/>
         ))}
       </div>
   </header>
