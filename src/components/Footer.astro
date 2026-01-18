@@ -1,9 +1,11 @@
 ---
+import EmailIcon from "@/icons/EmailIcon.astro";
 import GitHubIcon from "../icons/GitHubIcon.astro";
 import LinkedinIcon from "../icons/LinkedinIcon.astro";
 import MastodonIcon from "../icons/MastodonIcon.astro";
 import RssIcon from "../icons/RssIcon.astro";
 const userName = "JosemiGT";
+const email = "contacto@josemigt.es";
 ---
 
 <style>
@@ -14,32 +16,36 @@ const userName = "JosemiGT";
     align-items: center;
   }
   
-  footer div {
+  footer main {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    min-height: auto;
   }
 
   a {
-    margin-top: 10px;
     text-decoration: none;
-    font-size: small;
     font-weight: bold;
     color: var(--main-color);
   }
 </style>
 
 <footer>
-  <p>Hecho con ❤️ por <a href="/about/">JosemiGT</a></p>
-  <div>
+  <header>
+    <p>Hecho con ❤️ por <a href="/about/">JosemiGT</a></p>
+  </header>
+  <main>
+    <EmailIcon username={userName} email={email} />
     <GitHubIcon username={userName}/>
     <LinkedinIcon username={userName}/>
     <MastodonIcon />
     <RssIcon />
-  </div>
-  <a href="/privacidad">Política de privacidad</a>
-  <div style="margin-top: 10px;">
+  </main>
+  <section>
+    <p>Consulta<a href="/privacidad"> aquí la política de privacidad</a></p>
+  </section>
+  <section>
     <img src="/imgs/WrittenByAHuman.png" alt="Escrito por un humano, no por una IA" />
-  </div>
+  </section>
 </footer>
