@@ -7,11 +7,17 @@ export async function GET(context) {
     title: 'JosemiGT | Blog | Jardín digital',
     description: 'Programación, tecnología y curiosidades',
     site: context.site,
-    items: posts.map((post => ({
-      title: post.data.title,
-      pubDate: post.data.pubDate,
-      description: post.data.description,
-      link: `/posts/${post.slug}`
-    })))
+    items: posts
+    	.sort(
+		    (a, b) => { return b.data.pubDate.getTime() - a.data.pubDate.getTime()})
+      .map(
+        (post => 
+          ({
+          title: post.data.title,
+          pubDate: post.data.pubDate,
+          description: post.data.description,
+          link: `/posts/${post.slug}`
+        }))
+      )
   });
 }
