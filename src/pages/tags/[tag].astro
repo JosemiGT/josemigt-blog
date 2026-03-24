@@ -38,6 +38,6 @@ const { posts } = Astro.props as Props;
   <p>Entradas etiquetadas con {tag}</p>
   <br/>
   <ul>
-    {posts.map((post) => <BlogPostCard url={`/posts/${post.slug}`} postData={post.data}/>)}
+    {posts.map((post) => <BlogPostCard url={`/posts/${post.id}`} postData={post.data}/>)}
   </ul>
 </BaseLayout>

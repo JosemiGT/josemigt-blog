@@ -25,7 +25,7 @@ const allPosts = await getCollection("posts");
 	.map(
 		(post) => 
 		<BlogPostCard 
-			url={`/posts/${post.slug}`} 
+			url={`/posts/${post.id}`} 
 			postData={post.data} />
 		)
 	}

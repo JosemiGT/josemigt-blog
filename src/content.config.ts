@@ -1,10 +1,11 @@
-import { z, defineCollection } from "astro:content";
-import { PostState } from "../types/garden";
-
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
+import { glob } from 'astro/loaders';
+import { PostState } from "./types/garden";
 const stateValues = Object.values(PostState) as [PostState, ...PostState[]];
 
 const postsCollection = defineCollection({
-    type: 'content',
+    loader: glob({ pattern: '**/*.md', base: './src/content/posts'  }),
     schema: z.object({
       title: z.string(),
       pubDate: z.date(),

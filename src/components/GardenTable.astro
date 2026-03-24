@@ -45,7 +45,7 @@ const tagsOrdenadas = Object.keys(tagsMap).sort();
           <ul>
             {posts.map((post) => (
               <li>
-                <a href={`/posts/${post.slug}`}>
+                <a href={`/posts/${post.id}`}>
                   {EmojiState[post.data.state]} {post.data.title}
                 </a>
               </li>
